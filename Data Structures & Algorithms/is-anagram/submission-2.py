@@ -1,0 +1,14 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        hashs = {}
+        hasht = {}
+        if len(s)==len(t):
+            for i in range(0,len(s)):
+                hashs[s[i]] = 1 + hashs.get(s[i],0)
+                hasht[t[i]] = 1 + hasht.get(t[i],0)
+                
+
+            return hasht == hashs
+            
+        else:
+            return False
